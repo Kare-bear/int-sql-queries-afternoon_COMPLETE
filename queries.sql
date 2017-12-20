@@ -56,3 +56,63 @@ JOIN Genre g ON g.GenreId = t.GenreId
 WHERE g.Name = 'Alternative'; */
 
 /* PRACTICE JOINS DONE */
+
+/* Practice nested queries question 1 */
+
+/* SELECT *
+FROM Invoice 
+WHERE InvoiceId IN 
+(SELECT InvoiceId FROM InvoiceLine 
+ Where UnitPrice > 0.99); */
+
+/* Practice nested queries question 2 */
+
+/* SELECT *
+FROM PlaylistTrack
+WHERE PlaylistId = (
+  SELECT PlaylistId 
+  FROM Playlist 
+  WHERE Name ="Music"); */
+  
+/* Practice nested queries question 3 */
+
+/* SELECT Name
+FROM TRACK
+WHERE TrackId IN (
+  SELECT TrackId
+  FROM PlaylistTrack
+  WHERE PlaylistId=5); */
+  
+  /* Practice nested queries question 4 */
+
+/* SELECT *
+FROM Track
+WHERE GenreID IN(
+  SELECT GenreId
+  FROM Genre
+  WHERE Name = "Comedy");
+ */
+ 
+/*  Practice nested queries question 5 */
+
+/* SELECT *
+FROM Track
+WHERE AlbumId IN (
+  SELECT AlbumId
+  FROM Album
+  WHERE Title = "Fireball");
+  */
+  
+/* Practice nested queries question 6 */
+
+/* SELECT *
+FROM Track
+WHERE AlbumId IN (
+  SELECT AlbumId
+  FROM Album
+  WHERE ArtistId IN (
+    SELECT ArtistId 
+    FROM Artist 
+    WHERE Name = "Queen"));
+ */
+/* PRACTICE NESTED QUERIES DONE */
