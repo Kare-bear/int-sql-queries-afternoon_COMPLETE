@@ -116,3 +116,113 @@ WHERE AlbumId IN (
     WHERE Name = "Queen"));
  */
 /* PRACTICE NESTED QUERIES DONE */
+
+/* Practice Updating Rows question 1 */
+
+/* UPDATE Customer
+SET Fax = null
+WHERE Fax IS NOT null; */
+
+/* Practice Updating Rows question 2  */
+
+/* UPDATE Customer
+SET Fax = null
+WHERE Fax IS NOT null; */
+
+/* Practice Updating Rows question 3 */
+
+/* UPDATE Customer 
+SET LastName = "Thompson" 
+WHERE FirstName = "Julia" AND LastName = "Barnett"; */
+
+/* Practice Updating Rows question 4 */
+
+/* UPDATE Customer
+SET SupportRepId = 4
+WHERE Email = "luisrojas@yahoo.cl"; */
+
+/* Practice Updating Rows question 5 */
+
+/* UPDATE Track
+SET Composer = "The darkness around us"
+WHERE GenreId = ( SELECT GenreId FROM Genre WHERE Name = "Metal" )
+AND Composer IS null; */
+
+/* PRACTICE UPDATING ROWS DONE */
+
+/* Group By question 1 */
+
+/* SELECT Count(*), g.Name
+FROM Track t
+JOIN Genre g ON t.GenreId = g.GenreId
+GROUP BY g.Name; */
+
+/* Group By question 2 */
+
+/* SELECT Count(*), g.Name
+FROM Track t
+JOIN Genre g ON g.GenreId = t.GenreId
+WHERE g.Name = 'Pop' OR g.Name = 'Rock'
+GROUP BY g.Name; */
+
+/* Group By question 3 */
+
+/* SELECT ar.Name, Count(*)
+FROM Artist ar
+JOIN Album al ON ar.ArtistId = al.ArtistId
+GROUP BY al.ArtistId; */
+
+/* GROUP BY DONE */
+
+/* Use Distinct question 1 */
+
+/* SELECT DISTINCT Composer
+FROM Track; */
+
+/* Use Distinct question 2 */
+
+/* SELECT DISTINCT BillingPostalCode
+FROM Invoice; */
+
+/* Use Distinct question 3 */
+
+/* SELECT DISTINCT Company
+FROM Customer; */
+
+/* USE DISTINCT DONE */
+
+/* Delete Rows */
+
+/* CREATE TABLE practice_delete ( Name string, Type string, Value integer );
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "bronze", 50);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "bronze", 50);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "bronze", 50);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "silver", 100);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "silver", 100);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "gold", 150);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "gold", 150);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "gold", 150);
+INSERT INTO practice_delete ( Name, Type, Value ) VALUES ("delete", "gold", 150);
+
+SELECT * FROM practice_delete; */
+
+/* Delete Rows question 1 */
+
+/* DELETE 
+FROM practice_delete 
+WHERE Type = "bronze"; */
+
+/* Delete Rows question 2 */
+
+/* DELETE 
+FROM practice_delete 
+WHERE Type = "silver"; */
+
+/* Delete Rows question 3 */
+
+/* DELETE 
+FROM practice_delete 
+WHERE Value = 150; */
+
+/* DELETE ROWS DONE */
+
